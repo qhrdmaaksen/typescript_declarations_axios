@@ -22,10 +22,28 @@ email: string;
 		bs: string;
 	}
 }
-
+// 단일 사용자 정보 조회
 axios.get<User>("https://jsonplaceholder.typicode.com/users/1")
 		.then(res => {
 			console.log(res.data)
+			printUser(res.data)
 		}).catch(e => {
 	console.log("error : ", e)
 })
+
+// 전체 사용자 정보 조회
+axios.get<User[]>("https://jsonplaceholder.typicode.com/users")
+		.then(res => {
+			console.log(res.data)
+			//printUser(res.data)
+			res.data.forEach(printUser)
+		}).catch(e => {
+	console.log("error : ", e)
+})
+function printUser(user: User) {
+	console.log('user info')
+	console.log(user.name)
+	console.log(user.email)
+	console.log(user.address.city)
+	console.log(user.phone)
+}
