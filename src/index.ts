@@ -1,4 +1,7 @@
 import axios from 'axios';
+import _ from 'lodash';
+import {sample, add} from './utils'
+
 interface User {
 	id: number;
 	name: string;
@@ -47,3 +50,10 @@ function printUser(user: User) {
 	console.log(user.address.city)
 	console.log(user.phone)
 }
+
+console.log('=========================module===================')
+// src/utils.ts 에 있는 함수 가져오기
+console.log(sample([1,2,3,4,5]))
+console.log(add(1,2))
+
+
