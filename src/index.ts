@@ -1,6 +1,6 @@
 import axios from 'axios';
-import _ from 'lodash';
-import {sample, add} from './utils'
+import {sample, add, PI} from './utils'
+import {User as UserClass} from './Users';
 
 interface User {
 	id: number;
@@ -55,5 +55,7 @@ console.log('=========================module===================')
 // src/utils.ts 에 있는 함수 가져오기
 console.log(sample([1,2,3,4,5]))
 console.log(add(1,2))
+console.log(PI)
+console.log(UserClass)
 
 
